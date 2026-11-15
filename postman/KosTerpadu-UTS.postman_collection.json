@@ -1,0 +1,19 @@
+{
+  "info": {
+    "name": "KosTerpadu Full Website - Project UTS",
+    "description": "Uji REST API KosTerpadu. Jalankan server di localhost:3000.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {"name":"GET - Semua Kos","request":{"method":"GET","url":"http://localhost:3000/api/kos"}},
+    {"name":"GET - Cari Kos Parameter","request":{"method":"GET","url":"http://localhost:3000/api/kos/search?lokasi=Bandung&maksHarga=900000"}},
+    {"name":"GET - Detail Kos","request":{"method":"GET","url":"http://localhost:3000/api/kos/1"}},
+    {"name":"POST - Tambah Kos","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"nama\":\"Kos Anggrek\",\"pemilik\":\"Pak Budi\",\"lokasi\":\"Cimahi, Bandung\",\"hargaPerBulan\":750000,\"fasilitas\":[\"WiFi\",\"Kasur\"],\"jenis\":\"Putra\",\"kamarTersedia\":4}"},"url":"http://localhost:3000/api/kos"}},
+    {"name":"PUT - Ubah Kos ID 1","request":{"method":"PUT","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"hargaPerBulan\":850000,\"kamarTersedia\":2}"},"url":"http://localhost:3000/api/kos/1"}},
+    {"name":"DELETE - Hapus Kos ID 3","request":{"method":"DELETE","url":"http://localhost:3000/api/kos/3"}},
+    {"name":"POST - Booking","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"kosId\":1,\"namaPemesan\":\"Andi\",\"durasiBulan\":3}"},"url":"http://localhost:3000/api/booking"}},
+    {"name":"GET - Booking","request":{"method":"GET","url":"http://localhost:3000/api/booking"}},
+    {"name":"POST - Pembayaran Simulasi","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"bookingId\":1,\"metode\":\"QRIS (simulasi)\"}"},"url":"http://localhost:3000/api/pembayaran"}},
+    {"name":"GET - Riwayat Pembayaran","request":{"method":"GET","url":"http://localhost:3000/api/pembayaran"}}
+  ]
+}

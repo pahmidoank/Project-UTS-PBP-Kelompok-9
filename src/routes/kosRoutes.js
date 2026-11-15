@@ -1,0 +1,10 @@
+import { Router } from "express";
+import { tampilkanSemuaKos, tampilkanDetailKos, cariKos, tambahKos, ubahKos, hapusKos } from "../controllers/kosController.js";
+const router = Router();
+router.get("/", tampilkanSemuaKos);
+router.get("/search", cariKos);
+router.get("/:id", tampilkanDetailKos);
+router.post("/", tambahKos);
+router.put("/:id", ubahKos);
+router.delete("/:id", hapusKos);
+export default router;

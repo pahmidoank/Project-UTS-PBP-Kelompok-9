@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KosTerpadu - cari, booking, dan kelola kos dengan mudah.">
+  <title>KosTerpadu | Temukan Kos Nyamanmu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#"><span class="brand-mark">K</span><span>Kos<span class="brand-accent">Terpadu</span></span></a>
+    <nav class="main-nav">
+      <a href="#beranda">Beranda</a><a href="#daftar-kos">Cari Kos</a><a href="#cara-kerja">Cara Kerja</a>
+    </nav>
+    <div class="header-actions">
+      <button class="btn btn-outline btn-small" id="ownerNav">Dashboard Pemilik</button>
+      <a class="avatar" href="#daftar-kos" aria-label="Cari kos">⌕</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="beranda">
+      <div class="hero-content">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> TEMUKAN HUNIAN YANG TEPAT</div>
+        <h1>Temukan kos nyaman,<br><span>mulai dari sini.</span></h1>
+        <p>Jelajahi pilihan kos, bandingkan fasilitas, dan pesan kamar tanpa proses yang rumit.</p>
+        <div class="hero-trust"><span>✓ Informasi lebih terstruktur</span><span>✓ Pilihan kos beragam</span></div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200" alt="Interior kamar kos yang nyaman">
+        <div class="floating-note"><span class="note-icon">⌂</span><div><strong>Hunian pilihan</strong><small>Temukan tempat yang terasa seperti rumah</small></div></div>
+      </div>
+      <div class="search-panel">
+        <div class="search-field"><label for="searchLocation">Lokasi tujuan</label><input id="searchLocation" placeholder="Contoh: Bandung, Jatinangor"></div>
+        <div class="search-field"><label for="maxPrice">Budget maksimal / bulan</label><select id="maxPrice"><option value="">Semua harga</option><option value="700000">Di bawah Rp700 ribu</option><option value="900000">Di bawah Rp900 ribu</option><option value="1200000">Di bawah Rp1,2 juta</option><option value="1500000">Di bawah Rp1,5 juta</option></select></div>
+        <button class="btn btn-primary search-button" id="searchButton">Cari Kos <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="section" id="daftar-kos">
+      <div class="section-heading">
+        <div><div class="eyebrow">PILIHAN UNTUKMU</div><h2>Temukan kos pilihan</h2><p>Informasi kos yang bisa kamu sesuaikan dengan kebutuhan.</p></div>
+        <button class="text-button" id="resetSearch">Lihat semua kos <span>→</span></button>
+      </div>
+      <div class="filter-row">
+        <div class="filter-pills" id="typeFilters">
+          <button class="filter-pill active" data-type="">Semua</button>
+          <button class="filter-pill" data-type="Putra">Putra</button>
+          <button class="filter-pill" data-type="Putri">Putri</button>
+          <button class="filter-pill" data-type="Campur">Campur</button>
+        </div>
+        <span class="result-count" id="resultCount">Memuat data kos...</span>
+      </div>
+      <div class="kos-grid" id="kosGrid">
+        <div class="loading-card">Sedang memuat daftar kos...</div>
+      </div>
+    </section>
+
+    <section class="how-section" id="cara-kerja">
+      <div class="section-heading centered"><div class="eyebrow">MUDAH DAN PRAKTIS</div><h2>Mulai dari cari sampai booking</h2><p>Langkah sederhana untuk menemukan tempat tinggal berikutnya.</p></div>
+      <div class="steps-grid">
+        <article class="step-card"><span class="step-number">01</span><div class="step-icon">⌕</div><h3>Cari kos</h3><p>Pilih lokasi dan sesuaikan pilihan dengan budget serta kebutuhanmu.</p></article>
+        <article class="step-card"><span class="step-number">02</span><div class="step-icon">⌂</div><h3>Pilih kamar</h3><p>Lihat detail harga, fasilitas, dan ketersediaan kamar sebelum memesan.</p></article>
+        <article class="step-card"><span class="step-number">03</span><div class="step-icon">✓</div><h3>Booking dan bayar</h3><p>Isi data pemesan, tentukan durasi, lalu catat pembayaran melalui sistem.</p></article>
+      </div>
+    </section>
+
+    <section class="owner-banner">
+      <div><div class="eyebrow light">PUNYA PROPERTI KOS?</div><h2>Kelola kos jadi lebih praktis.</h2><p>Tambahkan informasi kos dan pantau pemesanan melalui satu dashboard.</p></div>
+      <button class="btn btn-white" id="ownerBanner">Buka Dashboard Pemilik <span>→</span></button>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="brand" href="#"><span class="brand-mark">K</span><span>Kos<span class="brand-accent">Terpadu</span></span></a><p>Temukan tempat tinggal yang sesuai dengan kebutuhanmu.</p><small>© 2026 KosTerpadu · Project UTS</small></footer>
+
+  <div class="modal-backdrop" id="modalBackdrop">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Tutup">×</button>
+      <div id="modalContent"></div>
+    </section>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

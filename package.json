@@ -1,0 +1,14 @@
+{
+  "name": "kosterpadu-full",
+  "version": "2.0.0",
+  "description": "Website pencarian, booking, dan pembayaran kos - Project UTS",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
